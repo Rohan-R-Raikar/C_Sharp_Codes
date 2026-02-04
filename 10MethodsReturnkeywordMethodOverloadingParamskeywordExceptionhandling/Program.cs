@@ -18,6 +18,7 @@
             // return = returns data back to the place where a method is invoked
             double x;
             double y;
+            const double z = 3.14; 
             double result;
 
             Console.WriteLine("Enter in number 1: ");
@@ -28,9 +29,20 @@
             result = Muliply(x, y);
             Console.WriteLine(result);
 
+            // method overloading = methods share name, but different parameters
+            //                      name + parameter + signature
+            //                      methods must have a unique signature
+
+
+            Console.WriteLine(Muliply(x,y,z));
+
             Console.ReadKey();
         }
 
+        static double Muliply(double x, double y, double z)
+        {
+            return z * x * y;
+        }
         static double Muliply(double x, double y)
         {
             double z = x * y;
