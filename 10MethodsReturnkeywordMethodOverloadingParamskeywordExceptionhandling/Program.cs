@@ -1,4 +1,6 @@
-﻿namespace MethodsReturnkeywordMethodOverloadingParamskeywordExceptionhandling
+﻿using System.ComponentModel.Design;
+
+namespace MethodsReturnkeywordMethodOverloadingParamskeywordExceptionhandling
 {
     class Program
     {
@@ -16,15 +18,10 @@
             singHappyBday(name, age);
 
             // return = returns data back to the place where a method is invoked
-            double x;
-            double y;
+            double x = 10;
+            double y = 10;
             const double z = 3.14; 
             double result;
-
-            Console.WriteLine("Enter in number 1: ");
-            x = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Enter in number 2: ");
-            y = Convert.ToDouble(Console.ReadLine());
 
             result = Muliply(x, y);
             Console.WriteLine(result);
@@ -36,7 +33,30 @@
 
             Console.WriteLine(Muliply(x,y,z));
 
+            // params keyword = a method parameter that takes a variable number of arguments.
+            //                  The parameter type must be a single - dimensional array
+
+            double total = CheckOut(3.99, 5.75, 15);
+
+            Console.WriteLine(total);
+
             Console.ReadKey();
+
+            /*
+             *  try = try some code that is considered "dangerous"
+             *  catch = catches and handles exceptions when they occur
+             *  finally = always executes regardless if exception is caught or not
+             */
+        }
+
+        static double CheckOut(params double[] prices)
+        {
+            double total = 0;
+            foreach (double price in prices)
+            {
+                total += price;
+            }
+            return total;
         }
 
         static double Muliply(double x, double y, double z)
