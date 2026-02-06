@@ -23,8 +23,32 @@
             //                               you do not have to define a field for a property,
             //                               you only have to write get; and/or set; inside the property
 
+            NewCar newCar = new NewCar("BMW");
+
+            newCar.Id = 1;
+
+            Console.WriteLine(newCar.Model);
+            Console.WriteLine(newCar.Id);
 
             Console.ReadKey();
+        }
+    }
+
+    class NewCar
+    {
+        //String model;
+
+        //public String Model
+        //{
+        //    get { return model; }
+        //    set { model = value; }
+        //}
+
+        public String Model { get; set; }
+        public int Id {  get; set; } 
+        public NewCar(String model)
+        {
+            this.Model = model;
         }
     }
 
